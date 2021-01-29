@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: depcore.products::lang.attribute.label
+
+# Model Form Field configuration
+form: $/depcore/products/models/attribute/fields.yaml
+
+# Model Class name
+modelClass: Depcore\Products\Models\Attribute
+
+# Default redirect location
+defaultRedirect: depcore/products/attributes
+
+# Create page
+create:
+    title: depcore.products::lang.attribute.create_title
+    redirect: depcore/products/attributes/update/:id
+    redirectClose: depcore/products/attributes
+
+# Update page
+update:
+    title: depcore.products::lang.attribute.update_title
+    redirect: depcore/products/attributes
+    redirectClose: depcore/products/attributes
+
+# Preview page
+preview:
+    title: depcore.products::lang.attribute.preview_title

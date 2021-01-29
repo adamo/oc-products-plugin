@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: depcore.products::lang.attributes.name.label
+        type: text
+    values:
+            label: depcore.products::lang.values.label
+            span: full
+            type: partial
+            path: values
+    iconable:
+            label: depcore.products::lang.svgicon.label
+            span: full
+            type: partial
+            path: svgicon
+

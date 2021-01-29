@@ -1,0 +1,18 @@
+values:
+  label: depcore.products::lang.values.label
+  name: depcore.products::lang.values.label
+  view:
+      list: $/depcore/products/models/value/columns.yaml
+      toolbarButtons: create|delete
+  manage:
+      form: $/depcore/products/models/value/fields.yaml
+      recordsPerPage: 10
+iconable:
+    label: depcore.products::lang.svgicon.label
+    view:
+        form: $/depcore/products/models/svgicon/fields.yaml
+        toolbarButtons: update|delete
+    manage:
+        form: $/depcore/products/models/svgicon/fields.yaml
+        list: $/depcore/products/models/svgicon/columns.yaml
+

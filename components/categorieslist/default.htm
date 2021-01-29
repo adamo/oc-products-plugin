@@ -1,0 +1,11 @@
+{% for category in __SELF__.categories %}
+  <div class="product-category icon-box">
+	<figure>
+		<svg width="{{category.iconable.width}}" height="{{category.iconable.height}}" viewBox="{{ category.iconable.viewbox }}"><use xlink:href='#{{category.iconable.symbol}}'></use></svg>
+	</figure>
+	<div class="content">
+		<h3 class="content-title"><a href="{{ category.slug }}">{{category.name}}</a></h3>
+		<p class="product-short-description">{{category.short_description|raw}}</p>
+	</div>
+</div>
+{% endfor %}

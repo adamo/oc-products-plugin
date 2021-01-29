@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    symbol:
+        label: depcore.products::lang.svgicon.symbol.label
+        type: text
+    viewport:
+        label: depcore.products::lang.svgicon.viewport.label
+        type: text
+    code:
+        label: depcore.products::lang.svgicon.code.label
+        type: codeeditor

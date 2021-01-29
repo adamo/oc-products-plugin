@@ -1,0 +1,12 @@
+1.0.1: First version of products
+1.0.2:
+  - create base tables
+  - create_attributes_table.php
+  - create_brands_table.php
+  - create_categories_table.php
+  - create_products_attributes_table.php
+  - create_products_table.php
+  - create_values_table.php
+1.0.3:
+  - create svg icons table
+  - create_svg_icons_table.php

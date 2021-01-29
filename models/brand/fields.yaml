@@ -1,0 +1,32 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: depcore.products::lang.product.name.label
+        type: text
+        span: left
+        comment: depcore.products::lang.products.name.description
+    slug:
+        label: depcore.products::lang.product.labels.slug
+        type: text
+        preset:
+            field: name
+            type: slug
+        span: right
+        disabled: true
+    logo:
+        label: depcore.products::lang.product.logo.label
+        type: fileupload
+        mode: image
+        span: left
+    color:
+        label: depcore.products::lang.product.color.label
+        type: colorpicker
+        span: right
+    iconable:
+        label: depcore.products::lang.svgicon.label
+        type: partial
+        path: svgicon
+        comment: depcore.products::lang.svgicon.description

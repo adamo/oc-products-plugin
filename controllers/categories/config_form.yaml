@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: depcore.products::lang.category.label
+
+# Model Form Field configuration
+form: $/depcore/products/models/category/fields.yaml
+
+# Model Class name
+modelClass: Depcore\Products\Models\Category
+
+# Default redirect location
+defaultRedirect: depcore/products/categories
+
+# Create page
+create:
+    title: depcore.products::lang.category.create_title
+    redirect: depcore/products/categories/update/:id
+    redirectClose: depcore/products/categories
+
+# Update page
+update:
+    title: depcore.products::lang.category.update_title
+    redirect: depcore/products/categories
+    redirectClose: depcore/products/categories
+
+# Preview page
+preview:
+    title: depcore.products::lang.category.preview_title

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: depcore.products::lang.brand.label
+
+# Model Form Field configuration
+form: $/depcore/products/models/brand/fields.yaml
+
+# Model Class name
+modelClass: Depcore\Products\Models\Brand
+
+# Default redirect location
+defaultRedirect: depcore/products/brands
+
+# Create page
+create:
+    title: depcore.products::lang.brand.create_title
+    redirect: depcore/products/brands/update/:id
+    redirectClose: depcore/products/brands
+
+# Update page
+update:
+    title: depcore.products::lang.brand.update_title
+    redirect: depcore/products/brands
+    redirectClose: depcore/products/brands
+
+# Preview page
+preview:
+    title: depcore.products::lang.brand.preview_title

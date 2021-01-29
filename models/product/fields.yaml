@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+tabs:
+    fields:
+        name:
+            label: depcore.products::lang.product.name.label
+            type: text
+            span: left
+        category:
+            label: depcore.products::lang.category.label
+            type: partial
+            path: category
+            tab: depcore.products::lang.category.label
+        brand:
+            label: depcore.products::lang.brand.label
+            type: partial
+            path: brand
+            tab: depcore.products::lang.brand.label
+        attributes:
+            label: depcore.products::lang.attributes.menu_label
+            type: partial
+            path: attributes

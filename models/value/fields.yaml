@@ -1,0 +1,8 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    value:
+        label: depcore.products::lang.values.value.label
+        type: text

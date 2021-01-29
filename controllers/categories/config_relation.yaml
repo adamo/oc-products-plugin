@@ -1,0 +1,9 @@
+iconable:
+    label: depcore.products::lang.svgicon.label
+    view:
+        form: $/depcore/products/models/svgicon/fields.yaml
+        toolbarButtons: update|delete
+    manage:
+        form: $/depcore/products/models/svgicon/fields.yaml
+        list: $/depcore/products/models/svgicon/columns.yaml
+

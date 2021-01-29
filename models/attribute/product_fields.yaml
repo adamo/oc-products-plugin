@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: depcore.products::lang.attributes.name.label
+        type: text
+    # value_id:
+    #         label: depcore.products::lang.values.label
+    #         span: full
+    #         type: partial
+    #         path: values
+    #         dependsOn: name
+    pivot[value]:
+        label: depcore.products::lang.value.name.label
+        # emptyOption: --
+        # required: true
+        type: relation
+        # span: storm
+        # cssClass: col-sm-5
+        dependsOn: attribute

@@ -1,0 +1,37 @@
+# values:
+#   label: depcore.products::lang.values.menu_label
+#   name: depcore.products::lang.value.label
+#   view:
+#       list: $/depcore/products/models/value/columns.yaml
+#       toolbarButtons: add|remove|create|delete
+#   manage:
+#       list: $/depcore/products/models/value/columns.yaml
+#       form: $/depcore/products/models/value/fields.yaml
+#       recordsPerPage: 10
+brand:
+    label: depcore.products::lang.brand.label
+    view:
+        form: $/depcore/products/models/brand/product_fields.yaml
+        toolbarButtons: create|delete|link|unlink
+    manage:
+        form: $/depcore/products/models/brand/product_fields.yaml
+        list: $/depcore/products/models/brand/columns.yaml
+category:
+    label: depcore.products::lang.category.label
+    view:
+        list: $/depcore/products/models/category/columns.yaml
+        form: $/depcore/products/models/category/fields.yaml
+        toolbarButtons: create|delete|link|unlink
+    manage:
+        form: $/depcore/products/models/category/fields.yaml
+        list: $/depcore/products/models/category/columns.yaml
+
+attributes:
+    label: depcore.products::lang.attributes.menu_label
+    name: depcore.products::lang.attribute.label
+    view:
+        list: $/depcore/products/models/attribute/product_columns.yaml
+    manage:
+        list: $/depcore/products/models/attribute/columns.yaml
+    pivot:
+        form: $/depcore/products/models/attribute/pivot_fields.yaml
