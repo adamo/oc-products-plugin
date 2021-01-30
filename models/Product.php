@@ -49,7 +49,7 @@ class Product extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = ['name','short_description','description'];
+    protected $fillable = ['name','short_description','description','category_id','brand_id'];
 
 
     /**
@@ -65,12 +65,11 @@ class Product extends Model
         'brand' => [Brand::class]
     ];
 
-    // public $hasManyThrough = [
-    //     'values' => [
-    //         Value::class,
-    //         'through' => Attribute::class,
-    //         'pivot' => ['value_id'],
-    //     ]
+    // public $hasMany = [
+    //     'values' => Values::class,
+    //     'table' => 'depcore_products_products_attributes',
+    //     'key' => 'product_id',
+    //     'foregin_key' => 'value_id',
     // ];
 
     public $belongsToMany = [
@@ -78,35 +77,18 @@ class Product extends Model
             Attribute::class,
             'table' => 'depcore_products_products_attributes',
             'pivot' => ['value_id'],
+            // 'order' => 'sort_order asc',
             'pivotModel' => 'Depcore\Products\Models\ProductAttributeValuePivot',
         ],
+    ];
+
+    public $attachOne = [
+        'cover' => '\System\Models\File',
     ];
 
     public $attachMany = [
         'images' => '\System\Models\File',
     ];
-
-    // function getAttributeIdOptions(){
-    //     return Attribute::listName(  );
-    // }
-
-    // function getAttributeOptions(){
-    //     return Attribute::listName(  );
-    // }
-
-    // function getValueOptions(){
-    //     return Value::listValues(  );
-    // }
-
-
-    // function getValueIdOptions($value, $data){
-    //     if ($value) return Value::where( 'attribute_id',$value )->get(  )->pluck( 'value','id' );
-    //     return Value::all(  )->pluck( 'value','id' );
-    // }
-
-    // function beforeSave(  ){
-    //       \Log::debug( $this );
-    // }
 
 
 }

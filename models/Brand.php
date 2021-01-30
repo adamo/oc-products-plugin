@@ -52,4 +52,17 @@ class Brand extends Model
     public $morphOne = [
         'iconable' => [SvgIcon::class, 'name' => 'iconable']
     ];
+
+
+    /**
+     * Get ordered brands that have products
+     *
+     * @return Object
+     * @author Adam
+     **/
+    public function scopeOrdered($query)
+    {
+        $this->has( 'products' )->orderBy( 'sort_order' );
+    }
+
 }

@@ -14,7 +14,6 @@ tabs:
               field: name
               type: slug
           span: right
-          disabled: true
       short_description:
         label: depcore.products::lang.category.short_description.label
         toolbarButtons: bold|itallic

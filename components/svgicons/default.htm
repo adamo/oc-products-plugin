@@ -1,5 +1,5 @@
 <svg viewBox="0 0 512 512" style="display: none;">
 	{% for icon in __SELF__.icons %}
-		<symbol id="{{ icon.symbol }}" viewbox="{{ icon.viewbox}}">{{ icon.code|raw }}</symbol>
+		<symbol id="{{ icon.symbol }}" viewbox="{{ icon.viewport }}">{{ icon.code|raw }}</symbol>
 	{% endfor %}
 </svg>

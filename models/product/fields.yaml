@@ -7,6 +7,19 @@ tabs:
             label: depcore.products::lang.product.name.label
             type: text
             span: left
+
+        cover:
+            label: depcore.products::lang.product.cover
+            type: fileupload
+            mode: image
+            tab: depcore.products::lang.product.tabs.media
+            span: left
+        images:
+            label: depcore.products::lang.product.images
+            type: fileupload
+            mode: image
+            span: right
+            tab: depcore.products::lang.product.tabs.media
         category:
             label: depcore.products::lang.category.label
             type: partial
@@ -21,3 +34,9 @@ tabs:
             label: depcore.products::lang.attributes.menu_label
             type: partial
             path: attributes
+            tab: depcore.products::lang.attributes.menu_label
+        is_published:
+            label: depcore.products::lang.product.is_published
+            type: switch
+            on: depcore.products::lang.global.no
+            off: depcore.products::lang.global.yes

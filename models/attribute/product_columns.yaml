@@ -5,6 +5,6 @@
 columns:
     name:
         label: depcore.products::lang.attribute.label
-        searchable: true
-    pivot[value_id]:
+    pivot[value]:
         label: value
+        type: partial

@@ -20,4 +20,7 @@
         data-stripe-load-indicator>
         <?= e(trans('backend::lang.list.delete_selected')) ?>
     </button>
+
+    <a href="<?= Backend::url('depcore/products/categories/export') ?>" class="btn btn-default oc-icon-upload"><?= e(trans('backend::lang.import_export.export_file')) ?></a>
+    <a href="<?= Backend::url('depcore/products/categories/import') ?>" class="btn btn-default oc-icon-download"><?= e(trans('backend::lang.import_export.import_file')) ?></a>
 </div>

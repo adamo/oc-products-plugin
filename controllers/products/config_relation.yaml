@@ -20,7 +20,7 @@ category:
     label: depcore.products::lang.category.label
     view:
         list: $/depcore/products/models/category/columns.yaml
-        form: $/depcore/products/models/category/fields.yaml
+        form: $/depcore/products/models/category/product_fields.yaml
         toolbarButtons: create|delete|link|unlink
     manage:
         form: $/depcore/products/models/category/fields.yaml

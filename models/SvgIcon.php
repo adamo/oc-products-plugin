@@ -42,4 +42,22 @@ class SvgIcon extends Model
      * @var array Relations
      */
     public $morphTo = ['iconable' => []];
+
+
+
+    /**
+     * get svg width from the viewport information
+     *
+     * @return Float
+     * @author Adam
+     **/
+    public function width()
+    {
+        return explode(" ", $this->viewport)[2];
+    }
+
+    public function height()
+    {
+        return explode(" ", $this->viewport)[3];
+    }
 }
