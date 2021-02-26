@@ -2,6 +2,7 @@
 
 use Model;
 use Depcore\Products\Models\Attribute;
+use Db;
 /**
  * product Model
  */
@@ -65,12 +66,12 @@ class Product extends Model
         'brand' => [Brand::class]
     ];
 
-    // public $hasMany = [
-    //     'values' => Values::class,
-    //     'table' => 'depcore_products_products_attributes',
-    //     'key' => 'product_id',
-    //     'foregin_key' => 'value_id',
-    // ];
+    public $hasMany = [
+        'values' => Values::class,
+        'table' => 'depcore_products_products_attributes',
+        'key' => 'product_id',
+        'foregin_key' => 'value_id',
+    ];
 
     public $belongsToMany = [
         'attributes' => [
@@ -90,6 +91,41 @@ class Product extends Model
         'images' => '\System\Models\File',
     ];
 
+    public function scopeListFrontEnd( $query, $attributes, $categoryId ) {
+        // "select `products`.`product_ID` from `depcore_products_products_attributes` as `products`
+        // inner join `depcore_products_products_attributes` as `products1` on `products`.`product_id` = `products1`.`product_id`
+        // inner join `depcore_products_products_attributes` as `products2` on `products`.`product_id` = `products2`.`product_id`
+        // where `products1`.`attribute_id` = 51 and `products1`.`value_id` = 200 and `products2`.`attribute_id` = 53 and `products2`.`value_id` = 4";
+        $productIds = [];
+        $attributes= array_filter( $attributes, function( $value ) { return !is_null( $value ) && $value !== ''; } );
+
+        $tableName = 'depcore_products_products_attributes';
+
+        $query = Db::table($tableName . ' AS products')->select( "products.product_id" );
+
+        foreach ($attributes as $attributeId => $valueId)
+        {
+            $tempName = "products$attributeId";
+            $query->join( "$tableName as $tempName",'products.product_id','=', "$tempName.product_id")
+            ->where( "$tempName.attribute_id", $attributeId)
+            ->where( "$tempName.value_id",$valueId );
+        }
+        $productIds = $query->distinct()->get();
+
+        return Product::published()->where( 'category_id',$categoryId )->whereIn('id', json_decode(json_encode($productIds), true));
+
+    }
+
+    /**
+     * Get only published elements from database
+     *
+     * @return Object
+     * @author Adam
+     **/
+    public function scopePublished($query)
+    {
+        return $query->whereNotNull('is_published')->where ( 'is_published',true )->orderBy( 'sort_order' );
+    }
 
 }
 

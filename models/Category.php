@@ -146,7 +146,7 @@ class Category extends Model
             $pageName = strtolower($page->fileName);
         }
 
-        return $pageUrl ? $pageUrl : '';
+        return $pageUrl ? \Cms::url($pageUrl).'/' : '';
 
     }
 

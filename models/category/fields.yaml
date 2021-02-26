@@ -4,7 +4,7 @@
 tabs:
   fields:
       name:
-        label: depcore.products::lang.category.name.label
+        label: depcore.products::lang.category.name
         type: text
         span: left
       slug:
@@ -15,18 +15,18 @@ tabs:
               type: slug
           span: right
       short_description:
-        label: depcore.products::lang.category.short_description.label
+        label: depcore.products::lang.category.short_description
         toolbarButtons: bold|itallic
         size: small
         type: richeditor
         span: left
       cover:
-        label: depcore.products::lang.category.cover.label
+        label: depcore.products::lang.category.cover
         mode: image
         type: fileupload
         span: right
       description:
-        label: depcore.products::lang.category.description.label
+        label: depcore.products::lang.category.description
         type: richeditor
       is_published:
         label: depcore.products::lang.category.is_published

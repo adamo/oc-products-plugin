@@ -1,0 +1,35 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+fields:
+    name:
+      label: depcore.products::lang.category.name
+      type: text
+      span: left
+    slug:
+        label: depcore.products::lang.labels.slug
+        type: text
+        preset:
+            field: name
+            type: slug
+        span: right
+        disabled: true
+    short_description:
+      label: depcore.products::lang.category.short_description
+      toolbarButtons: bold|itallic
+      size: small
+      type: richeditor
+      span: left
+    cover:
+      label: depcore.products::lang.category.cover
+      mode: image
+      type: fileupload
+      span: right
+    description:
+      label: depcore.products::lang.category.description
+      type: richeditor
+    is_published:
+      label: depcore.products::lang.category.is_published
+      type: switch
+      on: depcore.products::lang.global.no
+      off: depcore.products::lang.global.yes

@@ -4,13 +4,19 @@ use Cms\Classes\ComponentBase;
 use Depcore\Products\Models\Category;
 use Depcore\Products\Models\Brand;
 use Depcore\Products\Models\Attribute;
+use Depcore\Products\Models\Product;
+use Depcore\Products\Models\Value;
+use Request;
 
 class ProductsList extends ComponentBase
 {
     public $products;
     public $categories;
+    public $category;
     public $brands;
+    public $values;
     public $attributes;
+    public $categoryId;
 
     public function componentDetails() {
         return [
@@ -40,12 +46,19 @@ class ProductsList extends ComponentBase
      **/
     public function onRun()
     {
-        $slug = $this->param('slug');
+        $this->setDefaults();
+        $this->addJs('assets/js/filter.js');
         $this->categories = Category::published()->get();
-        $this->products = Category::findBySlug( $slug )->products()->get();
-        $this->brands = Brand::ordered()->get();
-        $this->attributes = Attribute::has('products')->get();
+        $categoryId = $this->category->id;
 
+        $this->brands = Brand::ordered()->with(['products' => function( $query ) use ($categoryId){
+            $query->where( 'category_id', $categoryId );
+        }])->get();
+
+        $productIds =  $this->category->products->pluck( 'id' )->all(  );
+
+        $this->values = \Db::table('depcore_products_products_attributes')->select( "value_id" )->whereIn( 'product_id',$productIds )->orderBy('value_id')->distinct()->pluck('value_id')->all(  );
+        $this->attributes = Attribute::filterable($this->values)->get();
     }
 
     /**
@@ -57,11 +70,31 @@ class ProductsList extends ComponentBase
     public function onFilterProducts()
     {
         $filters = [];
-        $filters = Request::input('Filter');
+        $filters = post();
+        $categoryId = post( 'category-id' );
+        $attributes = Request::input( 'attributes' );
 
-        $this->page['products'] = Product::listFrontEnd( $filters );
-        $this->page['filters'] = $filters;
+        if (empty(array_filter( $attributes ))) $this->setDefaults(); // no values in arrayd
+        else
+            $ids =  Product::listFrontEnd( $attributes, $categoryId )->pluck('id')->all();
+
+        $this->brands = Brand::ordered()->with(['products'=> function( $query ) use ( $ids){
+            $query->whereIn( 'id',$ids );
+        }])->get(  );
+
     }
 
+    protected function setDefaults(  ){
+        $slug = $this->param('slug');
+        if (!$slug)
+            $category = Category::published()->first();
+        else $category = Category::findBySlug( $slug );
+
+        if ($category) {
+            $this->products = $category->products()->get();
+            $this->categoryId = $category->id;
+            $this->category = $category;
+        }
+    }
 
 }

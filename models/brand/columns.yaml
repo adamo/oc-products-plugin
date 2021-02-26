@@ -3,6 +3,8 @@
 # ===================================
 
 columns:
+    id:
+        hidden: true
     name:
         label: depcore.products::lang.brand.label
         searchable: true

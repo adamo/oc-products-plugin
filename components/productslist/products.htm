@@ -1,0 +1,5 @@
+{% for product in products %}
+	{% set tempIndex = loop.index - 1 %}
+	{% partial __SELF__~'::product' product = product class = loop.index % 2 == 0 ? 'odd' : 'even'  %}
+	{% if tempIndex % 2 == 0 %}<hr>{% endif %}
+{% endfor %}

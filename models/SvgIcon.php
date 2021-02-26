@@ -16,13 +16,13 @@ class SvgIcon extends Model
     ];
 
     public $customMessages = [
-        'symbol.required' => 'depcore.products::lang.svgicon.symbol.required',
-        'symbol.max' => 'depcore.products::lang.svgicon.symbol.max',
-        'symbol.unique' => 'depcore.products::lang.svgicon.symbol.unique',
-        'viewport.required' => 'depcore.products::lang.svgicon.viewport.required',
-        'viewport.max' => 'depcore.products::lang.svgicon.viewport.max',
-        'viewport.min' => 'depcore.products::lang.svgicon.viewport.min',
-        'code.required' => 'depcore.products::lang.svgicon.code.required',
+        'symbol.required' => 'depcore.products::lang.svgicon.symbol_required',
+        'symbol.max' => 'depcore.products::lang.svgicon.symbol_max',
+        'symbol.unique' => 'depcore.products::lang.svgicon.symbol_unique',
+        'viewport.required' => 'depcore.products::lang.svgicon.viewport_required',
+        'viewport.max' => 'depcore.products::lang.svgicon.viewport_max',
+        'viewport.min' => 'depcore.products::lang.svgicon.viewport_min',
+        'code.required' => 'depcore.products::lang.svgicon.code_required',
     ];
 
     /**

@@ -15,6 +15,7 @@ class Categories extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
+        'Backend.Behaviors.ReorderController',
         'Backend.Behaviors.ImportExportController',
     ];
 
@@ -22,6 +23,7 @@ class Categories extends Controller
     public $listConfig = 'config_list.yaml';
     public $relationConfig = 'config_relation.yaml';
     public $importExportConfig = 'config_import_export.yaml';
+    public $reorderConfig = 'config_reorder.yaml';
 
     public function __construct()
     {

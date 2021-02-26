@@ -1,0 +1,7 @@
+{% for attribute in product.attributes %}
+	{% if not attribute.iconable and attribute.is_published  %}
+		<li>
+			<strong>{{ attribute.name}}:</strong> <span>{{ attribute.pivot.value.value }}</span>
+		</li>
+	{% endif %}
+{% endfor %}

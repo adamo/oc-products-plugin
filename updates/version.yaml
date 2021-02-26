@@ -10,3 +10,9 @@
 1.0.3:
   - create svg icons table
   - create_svg_icons_table.php
+1.0.4:
+  - Add filterable option to attributes
+  - update_attributes_table-1.php
+1.0.5:
+  - Add published option to attributes
+  - update_attributes_table-2.php

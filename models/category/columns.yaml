@@ -3,6 +3,9 @@
 # ===================================
 
 columns:
+    id:
+      hidden: true
+      width: 100px
     name:
         label: depcore.products::lang.category.label
         searchable: true

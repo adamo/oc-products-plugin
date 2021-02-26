@@ -1,0 +1,5 @@
+{% set cover = product.cover ? product.cover : product.category.cover %}
+{% if cover %}
+	<img src="{{ cover.path }}" alt="{{ cover.title }}">
+{% endif %}
+

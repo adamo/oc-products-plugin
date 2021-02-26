@@ -1,0 +1,11 @@
+import:
+    title: depcore.products::lang.category.import
+    modelClass: Depcore\Products\Models\CategoryImport
+    list: $/depcore/products/models/category/export_columns.yaml
+    redirect: depcore/products/categories
+
+export:
+    title: depcore.products::lang.category.export
+    modelClass: Depcore\Products\Models\CategoryExport
+    list: $/depcore/products/models/category/export_columns.yaml
+    redirect: depcore/products/categories

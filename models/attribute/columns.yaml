@@ -6,3 +6,19 @@ columns:
     name:
         label: depcore.products::lang.attribute.label
         searchable: true
+    is_filterable:
+        label: depcore.products::lang.attribute.is_filterable
+        type: inetis-list-switch
+        icon: true
+        titleTrue: depcore.courses::lang.attribute.filter_on
+        titleFalse: depcore.courses::lang.attribute.filter_of
+        textTrue: depcore.courses::lang.attribute.filterable
+        textFalse: depcore.courses::lang.attribute.nonfilterable
+    is_published:
+        label: depcore.products::lang.attribute.is_published
+        type: inetis-list-switch
+        icon: true
+        titleTrue: depcore.courses::lang.global.unpublish
+        titleFalse: depcore.courses::lang.global.publish
+        textTrue: depcore.courses::lang.global.published
+        textFalse: depcore.courses::lang.global.unpublished

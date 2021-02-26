@@ -1,7 +1,9 @@
 {% for category in __SELF__.categories %}
   <div class="product-category icon-box">
 	<figure>
-		<svg width="{{category.iconable.width}}" height="{{category.iconable.height}}" viewBox="{{ category.iconable.viewbox }}"><use xlink:href='#{{category.iconable.symbol}}'></use></svg>
+		{% if category.iconable %}
+			<svg width="{{category.iconable.width}}" height="{{category.iconable.height}}" viewBox="{{ category.iconable.viewbox }}"><use xlink:href='#{{category.iconable.symbol}}'></use></svg>
+		{% endif %}
 	</figure>
 	<div class="content">
 		<h3 class="content-title"><a href="{{ category.url }}">{{category.name}}</a></h3>

@@ -3,16 +3,14 @@
 # ===================================
 
 columns:
-    id:
-        hidden: true
     name:
         label: depcore.products::lang.product.name.label
         searchable: true
-    category:
+    category_id:
         label: depcore.products::lang.category.label
         relation: category
         select: name
-    brand:
+    brand_id:
         label: depcore.products::lang.brand.label
         relation: brand
         select: name

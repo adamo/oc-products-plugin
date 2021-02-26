@@ -1,0 +1,5 @@
+title: Color
+modelClass: Depcore\Products\Models\Product
+toolbar:
+    buttons: reorder_toolbar
+nameFrom: name

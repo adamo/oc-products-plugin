@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: depcore.products::lang.category.id
+    name:
+        label: depcore.products::lang.category.label
+    description:
+      label: depcore.products::lang.category.description
+    short_description:
+      label: depcore.products::lang.category.short_description
+    iconable:
+      label: depcore.products::lang.svgicon.code

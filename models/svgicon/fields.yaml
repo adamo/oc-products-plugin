@@ -4,11 +4,11 @@
 
 fields:
     symbol:
-        label: depcore.products::lang.svgicon.symbol.label
+        label: depcore.products::lang.svgicon.symbol
         type: text
     viewport:
-        label: depcore.products::lang.svgicon.viewport.label
+        label: depcore.products::lang.svgicon.viewport
         type: text
     code:
-        label: depcore.products::lang.svgicon.code.label
+        label: depcore.products::lang.svgicon.code
         type: codeeditor

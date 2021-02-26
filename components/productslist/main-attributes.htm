@@ -1,0 +1,8 @@
+{% for attribute in product.attributes %}
+	{% if attribute.iconable and attribute.is_published %}
+		<li>
+			<figure>{% partial __SELF__~'::icon' icon=attribute.iconable %}</figure>
+			<strong>{{ attribute.name}}:</strong> <span>{{ attribute.pivot.value.value }}</span>
+		</li>
+	{% endif %}
+{% endfor %}

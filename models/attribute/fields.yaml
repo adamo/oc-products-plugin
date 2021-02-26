@@ -11,9 +11,18 @@ fields:
             span: full
             type: partial
             path: values
+    is_filterable:
+            label: depcore.products::lang.attributes.is_filterable
+            span: full
+            type: switch
+            path: values
+    is_published:
+            label: depcore.products::lang.attributes.is_published
+            span: full
+            type: switch
+            path: values
     iconable:
             label: depcore.products::lang.svgicon.label
             span: full
             type: partial
             path: svgicon
-

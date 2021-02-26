@@ -1,0 +1,41 @@
+{% set categories = __SELF__.categories %}
+{% set categoryId = __SELF__.categoryId %}
+{% set attributes = __SELF__.attributes %}
+{% set values = __SELF__.values %}
+<div class="container">
+	<div class="toggle-button"></div>
+	<div class="categories-list tabs">
+		<ul>
+			{% for category in categories %}
+			  	<li class='{{ this.category.slug }}{% if this.param.slug == category.slug %} active{% endif %}'>
+			  		<a href="{{ category.url }}">
+				  		{% if category.iconable %}
+							<figure class='category-icon'>
+								<svg width="{{category.iconable.width}}" height="{{category.iconable.height}}" viewBox="{{category.iconable.viewport}}"><use xlink:href='#{{category.iconable.symbol}}'></use></svg>
+							</figure>
+				  		{% endif %}
+						<strong class="category-name">{{category.name}}</strong>
+					</a>
+			  	</li>
+			{% endfor %}
+		</ul>
+		<div class="form">
+			<form data-request="{{ __SELF__ }}::onFilterProducts" data-request-update="'{{ __SELF__ }}::brands': '#partialProducts'" id="productsFilter" >
+				<input type="hidden" name="category-id" value="{{ categoryId }}">
+				{% for attribute in attributes %}
+					<div class="form-field">
+						<label for="attributes[{{ attribute.id }}]">{{ attribute.name }}</label>
+						<select name="attributes[{{ attribute.id }}]" id="{{ attribute.slug }}">
+							<option value="">---- ----</option>
+							{% for value in attribute.values %}
+								{% if value.id in values  %}
+								  	<option value="{{ value.id }}">{{ value.value }}</option>
+								{% endif %}
+							{% endfor %}
+						</select>
+					</div>
+				{% endfor %}
+			</form>
+		</div>
+	</div>
+</div>

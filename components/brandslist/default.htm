@@ -1,0 +1,5 @@
+{% for brand in __SELF__.brands %}
+  	{% if brand.iconable %}
+  		{{ brand.iconable|svgicon|raw }}
+  	{% endif %}
+{% endfor %}

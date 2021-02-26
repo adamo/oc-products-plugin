@@ -1,0 +1,11 @@
+import:
+    title: depcore.products::lang.products.import
+    modelClass: Depcore\Products\Models\ProductImport
+    list: $/depcore/products/models/product/import_columns.yaml
+    redirect: depcore/products/products
+
+# export:
+#     title: Eksport części
+#     modelClass: Depcore\Parts\Models\ProductImport
+#     list: $/depcore/parts/models/product/columns.yaml
+#     redirect: depcore/parts/products

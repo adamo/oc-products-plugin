@@ -11,7 +11,7 @@ class CreateAttributesTable extends Migration
         Schema::create('depcore_products_attributes', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name',30);
+            $table->string('name',60);
             $table->string('slug')->index();
             $table->timestamps();
         });

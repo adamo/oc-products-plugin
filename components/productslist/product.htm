@@ -1,0 +1,10 @@
+<div class="product {{ class }}">
+	<h5 class="product-name" >{{ product.name }}</h5>
+	{% partial __SELF__~'::image' product=product %}
+	<ul class="features content">
+		{% partial __SELF__~'::main-attributes' product=product %}
+	</ul>
+	<ul class="features">
+		{% partial __SELF__~'::other-attributes' product=product %}
+	</ul>
+</div>

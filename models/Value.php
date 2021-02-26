@@ -37,7 +37,15 @@ class Value extends Model
         'attribute' => Attribute::class
     ];
 
-    function scopeListValues(  ){
+    // public $belongsToMany = [
+    //     'products' => Product::class,
+    //     'table' => 'depcore_products_products_attributes',
+    //     'key' => 'value_id',
+    //     'foregin_key' => 'product_id',
+    // ];
+
+    function scopeListValues(  )
+    {
         $result = self::all(  );
         $list = array();
 

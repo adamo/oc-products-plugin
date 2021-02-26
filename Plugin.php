@@ -55,6 +55,7 @@ class Plugin extends PluginBase
             'Depcore\Products\Components\CategoriesList' => 'categoriesList',
             'Depcore\Products\Components\ProductsList' => 'productsList',
             'Depcore\Products\Components\SvgIcons' => 'svgIcons',
+            'Depcore\Products\Components\BrandsList' => 'brandsList',
         ];
     }
 
@@ -120,6 +121,27 @@ class Plugin extends PluginBase
                 ], // side menu ends
             ],
         ];
+    }
+
+    public function registerMarkupTags()
+    {
+        return [
+            'filters' => [
+                'svgicon' => [$this, 'generateSvgIconTag'],
+            ],
+
+        ];
+    }
+
+    /**
+     * Return formated svg iconn tag
+     *
+     * @return string
+     * @author Adam
+     **/
+    public function generateSvgIconTag($icon)
+    {
+        return "<svg width='{$icon->width()}' height='{$icon->height()}' viewBox='0 0 {$icon->width()} {$icon->height()}'><use xlink:href='#{$icon->symbol}'></use></svg>";
     }
 
 }

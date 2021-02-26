@@ -56,6 +56,19 @@ class Attribute extends Model
         ],
     ];
 
+    /**
+     * Get only attributes with filterable set
+     *
+     * @return Object
+     * @author Adam
+     **/
+    public function scopeFilterable($query, $valueIds)
+    {
+        return $query->whereNotNull( 'is_filterable' )->where( 'is_filterable',true )->whereHas( 'values', function( $query ) use(  $valueIds ){
+            $query->whereIn( 'id',$valueIds );
+        } );
+    }
+
     function scopeListName( $query ){
         $result = self::all(  );
         $list = array();
