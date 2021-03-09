@@ -1,13 +1,15 @@
 {% set brands = __SELF__.brands %}
 {% set products = __SELF__.products %}
+
 <div class="container products" id="partialProducts">
 	{% for brand in brands %}
 		{% for product in brand.products %}
-			{% if loop.first %}
+			{% if loop.first %}{% partial __SELF__~'::brand' brand=brand %} {% endif %}
+			{% if loop.first and __SELF__.property('show_featured_product') %}
 				{% partial __SELF__~'::featured' product = product %}
 			{% else %}
-				{% set tempIndex = loop.index - 1 %}
-				{% partial __SELF__~'::product' product = product class = loop.index % 2 == 0 ? 'odd' : 'even'  %}
+				{% set tempIndex = loop.index - __SELF__.property('show_featured_product') %}
+				{% partial __SELF__~'::product' product = product class = tempIndex % 2 == 0 ? 'even' : 'odd'  %}
 				{% if tempIndex % 2 == 0 %}<hr>{% endif %}
 			{% endif %}
 		{% endfor %}

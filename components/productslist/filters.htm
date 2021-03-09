@@ -1,8 +1,15 @@
 {% set categories = __SELF__.categories %}
 {% set categoryId = __SELF__.categoryId %}
+{% set category = __SELF__.category %}
 {% set attributes = __SELF__.attributes %}
 {% set values = __SELF__.values %}
+
 <div class="container">
+	{% if __SELF__.property('show_featured_image') and __SELF__.property('featured_image_position') == 'top' %}
+		{% if category.cover %}
+		  <div class="category-featured-image"><img src="{{ category.cover.getThumb(1340,400,{crop: false}) }}" alt="{{ category.name }}"></div>
+		{% endif %}
+	{% endif %}
 	<div class="toggle-button"></div>
 	<div class="categories-list tabs">
 		<ul>
@@ -38,4 +45,9 @@
 			</form>
 		</div>
 	</div>
+	{% if __SELF__.property('show_featured_image') and __SELF__.property('featured_image_position') == 'bottom' %}
+		{% if category.cover %}
+		  <div class="category-featured-image"><img src="{{ category.cover.getThumb(1340,400,{crop: false}) }}" alt="{{ category.name }}"></div>
+		{% endif %}
+	{% endif %}
 </div>

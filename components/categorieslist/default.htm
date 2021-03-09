@@ -2,7 +2,7 @@
   <div class="product-category icon-box">
 	<figure>
 		{% if category.iconable %}
-			<svg width="{{category.iconable.width}}" height="{{category.iconable.height}}" viewBox="{{ category.iconable.viewbox }}"><use xlink:href='#{{category.iconable.symbol}}'></use></svg>
+			<svg width="{{category.iconable.width}}" height="{{category.iconable.height}}" viewBox="{{ category.iconable.viewport }}"><use xlink:href='#{{category.iconable.symbol}}'></use></svg>
 		{% endif %}
 	</figure>
 	<div class="content">

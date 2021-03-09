@@ -138,6 +138,16 @@ return [
                 'description' => 'depcore.products::lang.components.productslist.no_results_found.description',
                 'placeholder' => 'depcore.products::lang.components.productslist.no_results_found.placeholder',
             ],
+            'show_featured_image' => [
+                'title' => 'depcore.products::lang.components.productslist.show_featured_image.title',
+                'description' => 'depcore.products::lang.components.productslist.show_featured_image.description',
+            ],
+            'featured_image_position' => [
+                'title' => 'depcore.products::lang.components.productslist.featured_image_position.title',
+                'description' => 'depcore.products::lang.components.productslist.featured_image_position.description',
+                'top' => 'depcore.products::lang.components.productslist.featured_image_position.top',
+                'bottom' => 'depcore.products::lang.components.productslist.featured_image_position.bottom',
+            ],
         ],
         'svgicons' => [
             'name' => 'SvgIcons Component',
@@ -145,6 +155,16 @@ return [
         ],
         'brandslist' => [
             'name' => 'BrandsList Component',
+            'description' => 'No description provided yet...',
+        ],
+        'productlist' => [
+            'show_featured_product' => [
+                'title' => 'depcore.products::lang.components.productlist.show_featured_product.title',
+                'description' => 'depcore.products::lang.components.productlist.show_featured_product.description',
+            ],
+        ],
+        'svgs' => [
+            'name' => 'Svgs Component',
             'description' => 'No description provided yet...',
         ],
     ],

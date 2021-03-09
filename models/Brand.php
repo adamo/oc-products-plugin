@@ -9,6 +9,7 @@ class Brand extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Sluggable;
+    use \October\Rain\Database\Traits\Sortable;
 
     public $slugs = ['slug' => 'name'];
 

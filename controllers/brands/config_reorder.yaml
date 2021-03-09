@@ -1,0 +1,5 @@
+title: backend::lang.reorder.default_title
+modelClass: Depcore\Products\Models\Brand
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

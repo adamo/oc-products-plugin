@@ -1,15 +1,5 @@
 <div class="product featured">
 	<div class="content">
-		<figure class="brand" >
-			{% if product.brand.color %}
-				<div class="brand-color" style='background-color: {{product.brand.color}};'></div>
-			{% endif %}
-			{% if product.brand.iconable %}
-				{% partial __FELF__~'::icon' icon = product.brand.iconable %}
-			{% else %}
-				<figcaption>{{ brand.name }}</figcaption>
-			{% endif %}
-		</figure>
 		<h4 class='product-name'>{{product.name}}</h4>
 		<ul class="features">
 			{% partial __SELF__~'::main-attributes' product=product %}

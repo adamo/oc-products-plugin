@@ -1,0 +1,10 @@
+<figure class="brand" >
+	{% if brand.color %}
+		<div class="brand-color" style='background-color: {{brand.color}};'></div>
+	{% endif %}
+	{% if brand.iconable %}
+		{% partial __FELF__~'::icon' icon = brand.iconable %}
+	{% else %}
+		<figcaption>{{ brand.name }}</figcaption>
+	{% endif %}
+</figure>

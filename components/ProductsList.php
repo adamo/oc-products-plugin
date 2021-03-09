@@ -27,6 +27,30 @@ class ProductsList extends ComponentBase
 
     public function defineProperties() {
         return [
+            'show_featured_product' => [
+                'title'             => 'depcore.products::lang.components.productlist.show_featured_product.title',
+                'description'       => 'depcore.products::lang.components.productlist.show_featured_product.description',
+                'default'           => 0,
+                'type'              => 'checkbox',
+                'required' => 'false',
+            ],
+            'show_featured_image' => [
+                'title'             => 'depcore.products::lang.components.productslist.show_featured_image.title',
+                'description'       => 'depcore.products::lang.components.productslist.show_featured_image.description',
+                'default'           => 1,
+                'type'              => 'checkbox',
+            ],
+            'featured_image_position' => [
+                'title'             => 'depcore.products::lang.components.productslist.featured_image_position.title',
+                'description'       => 'depcore.products::lang.components.productslist.featured_image_position.description',
+                'default'           => 'top',
+                'type'              => 'dropdown',
+                'required' => 'true',
+                'options' => [
+                    'top'=>'depcore.products::lang.components.productslist.featured_image_position.top',
+                    'bottom'=>'depcore.products::lang.components.productslist.featured_image_position.bottom'
+                ]
+            ],
             'no_results_found' => [
                 'title'             => 'depcore.products::lang.components.productslist.no_results_found.title',
                 'description'       => 'depcore.products::lang.components.productslist.no_results_found.description',
@@ -59,6 +83,8 @@ class ProductsList extends ComponentBase
 
         $this->values = \Db::table('depcore_products_products_attributes')->select( "value_id" )->whereIn( 'product_id',$productIds )->orderBy('value_id')->distinct()->pluck('value_id')->all(  );
         $this->attributes = Attribute::filterable($this->values)->get();
+
+        $this->page->title = "{$this->page->title}: {$this->category->name}";
     }
 
     /**

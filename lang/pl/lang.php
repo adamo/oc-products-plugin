@@ -160,6 +160,16 @@ return [
                 'description' => 'Treść umieszczona w przypadku braku wyników',
                 'placeholder' => 'wpisz treść',
             ],
+            'show_featured_image' => [
+                'title' => 'depcore.products::lang.components.productslist.show_featured_image.title',
+                'description' => 'depcore.products::lang.components.productslist.show_featured_image.description',
+            ],
+            'featured_image_position' => [
+                'title' => 'depcore.products::lang.components.productslist.featured_image_position.title',
+                'description' => 'depcore.products::lang.components.productslist.featured_image_position.description',
+                'top' => 'depcore.products::lang.components.productslist.featured_image_position.top',
+                'bottom' => 'depcore.products::lang.components.productslist.featured_image_position.bottom',
+            ],
         ],
         'svgicons' => [
             'name' => 'Ikony SVG',
@@ -167,6 +177,16 @@ return [
         ],
         'brandslist' => [
             'name' => 'Komponent BrandsList',
+            'description' => 'Nie dodano opisu',
+        ],
+        'productlist' => [
+            'show_featured_product' => [
+                'title' => 'depcore.products::lang.components.productlist.show_featured_product.title',
+                'description' => 'depcore.products::lang.components.productlist.show_featured_product.description',
+            ],
+        ],
+        'svgs' => [
+            'name' => 'Komponent Svgs',
             'description' => 'Nie dodano opisu',
         ],
     ],
