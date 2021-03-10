@@ -10,8 +10,8 @@
 			{% else %}
 				{% set tempIndex = loop.index - __SELF__.property('show_featured_product') %}
 				{% partial __SELF__~'::product' product = product class = tempIndex % 2 == 0 ? 'even' : 'odd'  %}
-				{% if tempIndex % 2 == 0 %}<hr>{% endif %}
 			{% endif %}
+			{% if tempIndex % 2 == 0 %}<hr>{% endif %}
 		{% endfor %}
 	{% endfor %}
 </div>
